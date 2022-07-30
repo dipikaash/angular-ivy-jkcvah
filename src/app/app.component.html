@@ -17,6 +17,7 @@
     <br />
     <button>Submit</button>
   </form>
+
   <form (ngSubmit)="onTDSubmit(f)" #f="ngForm">
     <h2>Enter User Data: TD Form</h2>
     <label for="name">Name</label>
@@ -33,6 +34,7 @@
     <br />
     <button>Submit</button>
   </form>
+
   <div>Values added</div>
   <table *ngIf="detail.length">
     <tr>
