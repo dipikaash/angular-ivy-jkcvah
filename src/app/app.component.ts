@@ -16,7 +16,8 @@ export class AppComponent {
     this.detail.push({ name: f.value.name, age: f.value.age });
   }
   ngOnInit() {
-    this.fg = this.fb.group({
+    // new FormGroup can be replaced with this.fb.group
+    this.fg = new FormGroup({
       name: new FormControl(null),
       age: new FormControl(null),
     });
