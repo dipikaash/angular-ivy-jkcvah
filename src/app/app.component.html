@@ -1,0 +1,47 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+<div>
+  <form [formGroup]="fg" (ngSubmit)="onReactiveSubmit()">
+    <h2>Enter User Data : Reactive From</h2>
+    <label for="name">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Enter name here"
+      formControlName="name"
+    />
+    <br />
+    <label for="age">age</label>
+    <input type="number" id="age" name="age" formControlName="age" />
+    <br />
+    <button>Submit</button>
+  </form>
+  <form (ngSubmit)="onTDSubmit(f)" #f="ngForm">
+    <h2>Enter User Data: TD Form</h2>
+    <label for="name">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Enter name here"
+      ngModel
+    />
+    <br />
+    <label for="age">age</label>
+    <input type="number" id="age" name="age" ngModel />
+    <br />
+    <button>Submit</button>
+  </form>
+  <div>Values added</div>
+  <table *ngIf="detail.length">
+    <tr>
+      <td>Name</td>
+      <td>Age</td>
+    </tr>
+    <tr *ngFor="let item of detail">
+      <td>{{ item.name }}</td>
+      <td>{{ item.age }}</td>
+    </tr>
+  </table>
+</div>
